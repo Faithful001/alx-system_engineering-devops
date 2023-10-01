@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "files in current directory:"
+ls -a 
+
+cd ..
+
+echo "files in the parent of the working directory:"
+ls -a
+
+cd /boot
+
+echo "files in the /boot directory:"
+ls -a

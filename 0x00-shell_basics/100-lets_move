@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source_dir=$(pwd)
+
+destination_dir="/tmp/u"
+
+mkdir -p "$destination_dir"
+
+for file in [A-Z]*; do
+    if [ -f "$file" ]; then
+        mv "$file" "$destination_dir/"
+        echo "Moved '$file' to '$destination_dir/'."
+    fi
+done
+

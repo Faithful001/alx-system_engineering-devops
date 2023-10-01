@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Define the current working directory
+current_dir=$(pwd)
+
+# Delete files ending with ~
+for file in "$current_dir"/*~; do
+    if [ -f "$file" ]; then
+        rm "$file"
+        echo "Deleted '$file'."
+    fi
+done
+

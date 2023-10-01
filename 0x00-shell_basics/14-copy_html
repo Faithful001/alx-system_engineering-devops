@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source_dir=$(pwd)
+parent_dir="$(dirname "$source_dir")"
+
+for html_file in *.html; do
+    # Check if the file exists in the parent directory
+    if [ -e "$parent_dir/$html_file" ]; then
+        # Check if the source file is newer than the destination file
+        if [ "$source_dir/$html_file" -nt "$parent_dir/$html_file" ]; then
+            # Copy the file to the parent directory
+            cp "$source_dir/$html_file" "$parent_dir/"
+        else
+            echo "'$html_file' already exists in '$parent_dir/' and is not newer."
+        fi
+    else
+        # Copy the file to the parent directory
+        cp "$source_dir/$html_file" "$parent_dir/"
+        echo "Copied '$html_file' to '$parent_dir/'."
+    fi
+done
+
