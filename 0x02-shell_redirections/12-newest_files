@@ -1,0 +1,3 @@
+#!/bin/bash
+ls -t -r | head -n 10
+echo

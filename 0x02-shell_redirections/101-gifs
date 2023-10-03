@@ -1,0 +1,5 @@
+#!/bin/bash
+#!/bin/bash
+
+find . -type f -iname '*.gif' | LC_COLLATE=C sort -f | tr '[:upper:]' '[:lower:]' | rev | cut -c 5- | rev > gif_files.txt
+echo
